@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block dynamicContent %}
+    <div class="blog">
+        <h1>Páginas</h1>
+        {% if pages %}
+            <h2> Páginas disponibles </h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Subtítulo</th>
+                    <th>Autor</th>
+                    <th>Fecha</th>
+                    <th></th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for page in pages %}
+                    <tr>
+                        <td>{{ page.title }}</td>
+                        <td>{{ page.subtitle }}</td>
+                        <td>{{ page.owner.username }}</td>
+                        <td>{{ page.date }}</td>
+                        <td><a class='tableA' href={% url 'page' page.id %}>Saber más</a></td>
+                        {% if user.id == page.owner.id %}
+                            <td><a class='tableA' href={% url 'update_page' page.id %}>Editar</a></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p> No hay páginas disponibles </p>
+        {% endif %}
+    </div>
+{% endblock %}

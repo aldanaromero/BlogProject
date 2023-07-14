@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block dynamicContent %}
+    <div class="updateUser">
+      <h3>Recuerda que si editas tu usuario vas a tener que volver a iniciar sesión</h3>
+
+
+        <form action="" method="POST">{% csrf_token %}
+
+            <table>
+                {{ form.as_table }}
+            </table>
+
+            <button class="boton-personalizado" type="submit">Guardar</button>
+
+        </form>
+    </div>
+{% endblock %}

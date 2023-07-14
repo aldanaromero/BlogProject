@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block dynamicContent %}
+    <div class="blog">
+        <h1>Página</h1>
+
+
+        <h2> {{ page.title }} </h2>
+
+        {% if page.picture %}
+            <p><img class="imgSquare" src="{{ page.picture.url }}" alt=""></p>
+        {% endif %}
+
+        <p class="subtitle">{{ page.subtitle }}</p>
+        <br>
+        <br>
+
+        <p>Autor: {{ page.owner }}</p>
+        <p>Fecha de creación: {{ page.date }}</p>
+        <br>
+        <br>
+        <h3>Contenido: </h3>
+        <br>
+        <p>{{ page.body }}</p>
+    </div>
+{% endblock %}

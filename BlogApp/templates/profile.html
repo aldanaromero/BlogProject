@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block dynamicContent %}
+    <div class="blog">
+        <h1>Mi perfil</h1>
+        <h2> Hola {{ profile.user.username }} !!</h2>
+        <h3>Mi usuario</h3>
+        <br>
+        <br>
+        <p>Nombre: {{ profile.user.first_name }}</p>
+        <p>Apellido: {{ profile.user.last_name }}</p>
+        <p>Email: {{ profile.user.email }}</p>
+        <p><a class='tableA' href={% url 'update_user' profile.user.id %}> Ir a editar mi usuario</a></p>
+        <br>
+        <br>
+        <h3>Contenido de mi perfil</h3>
+        {% if profile.picture %}
+            <p><img class="imgCircle" src="{{ profile.picture.url }}" alt=""></p>
+        {% endif %}
+
+        {% if profile.description %}
+            <p>Descripción: {{ profile.description }}</p>
+        {% endif %}
+        {% if profile.link %}
+            <a class='tableA' href={{ profile.link }}>Mis redes</a>
+        {% endif %}
+        <br>
+        <br>
+        <p><a class='tableA' href={% url 'update_profile' profile.id %}> Ir a editar mi perfil</a></p>
+
+        <br>
+        <br>
+    </div>
+
+{% endblock %}

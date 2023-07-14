@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Blog</title>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">Acerca de mi</a></li>
+            <li><a href="/pages">Entradas del blog</a></li>
+            <li><a href="/add_page">Agregar entrada</a></li>
+            <li><a href="/messages">Mensajes</a></li>
+            <li><a href="/add_message">Enviar mensaje</a></li>
+            {% if not request.user.is_authenticated %}
+                <li><a href="/accounts/login/">Iniciar sesión / Registrarse</a></li>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+                <li><a href={% url 'profile' request.user.id %}>Mi perfil</a></li>
+                <li><a href="/accounts/logout/">Cerrar Sesión</a></li>
+            {% endif %}
+
+
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="content-dynamic">
+        {% block dynamicContent %}
+
+        {% endblock %}
+    </div>
+
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2023 Blog.</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block dynamicContent %}
+    <div class="blog">
+        <h1>Mensajes</h1>
+
+        {% if messages %}
+            <h2> Mensajes recibidos </h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Nombre de usuario</th>
+                    <th>Fecha</th>
+                    <th></th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for message in messages %}
+                    <tr>
+                        <td>{{ message.title }}</td>
+                        <td>{{ message.from_user.username }}</td>
+                        <td>{{ message.date }}</td>
+                         <td><a class='tableA' href={% url 'message' message.id %}>Saber más</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p> No hay mensajes disponibles </p>
+        {% endif %}
+    </div>
+
+{% endblock %}

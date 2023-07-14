@@ -1,0 +1,173 @@
+/* styles.css */
+
+/* Estilos generales */
+body {
+    font-family: "Proxima Nova", Arial, sans-serif;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+.imgCircle {
+    width: 100px;
+    height: 100px;
+    border-radius: 160px;
+    border: 5px solid #A69174;
+}
+
+.imgSquare {
+    border-radius: 20px;
+    border: 5px solid #A69174;
+}
+
+.subtitle {
+    font-style: italic; /* Establece la letra en cursiva */
+    color: #959FA6;
+}
+
+.container {
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.cont-flex {
+    display: flex; /* Establece el contenedor como un flex container */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    gap: 20px; /* Espacio entre la imagen y el párrafo */
+}
+
+img, p {
+    margin: 0; /* Elimina los márgenes predeterminados */
+}
+
+.content-dynamic {
+    margin: 0 50px;
+    padding: 10px;
+}
+
+/* Estilos de la navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    background-color: #85A68E;
+    padding: 10px;
+    margin: 0px
+}
+
+nav ul li a {
+    color: #F2F2F2;
+    text-decoration: none;
+    padding: 10px;
+    letter-spacing: 1px;
+}
+
+/* Estilos de la sección hero */
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: #262626;
+    text-align: left;
+    padding: 10px 0;
+}
+
+.hero h1 {
+    font-size: 26px;
+    margin: 5px;
+    color: #85A68E;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.hero .btn {
+    display: inline-block;
+    background-color: #b4b4b4;
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #797878;
+}
+
+/* Estilos de la sección de características */
+.blog {
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 50px;
+}
+
+.blog h1 {
+    margin-bottom: 50px;
+}
+
+.blog h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.blog p {
+    font-size: 18px;
+    margin-bottom: 10px;
+
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+    color: #777;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #85A68E;
+}
+
+thead th {
+    background-color: #f2f2f2;
+}
+
+.tableA {
+    color: #85A68E;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #e6e6e6;
+}
+
+button {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #f2f2f2;
+    margin: 10px 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #85A68E;
+    border-color: #f2f2f2;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 10px;
+}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block dynamicContent %}
+    <div class="container">
+        <div class="blog">
+        <h1>Blog</h1>
+        {% if request.user.is_authenticated %}
+            <h2> Hola, {{ user.username }} !!</h2>
+        {% endif %}
+        <p>En esta página web podes leer y escribir diferentes articulos, además de enviar mensajes a otros usuarios</p>
+        <br>
+        <p>Seleccioná cualquier elemento del menú superior para continuar</p>
+    </div>
+    </div>
+{% endblock %}

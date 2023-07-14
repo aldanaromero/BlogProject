@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block dynamicContent %}
+    <div class="blog">
+        <h1>Mensaje</h1>
+
+    <h2> {{ message.title }} </h2>
+
+    <p>De: {{message.from_user}}</p>
+    <p>Fecha de creación: {{message.date}}</p>
+    <h3>Mensaje: </h3>
+
+    <p>{{message.message_body}}</p>
+    </div>
+
+{% endblock %}
