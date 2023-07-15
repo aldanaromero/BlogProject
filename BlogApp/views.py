@@ -39,8 +39,6 @@ class AddBlog(LoginRequiredMixin, CreateView):
     template_name = 'addBlog.html'
 
     def form_valid(self, form):
-        print(self.request.user.username)
-        print(self.request.user)
         form.instance.owner = self.request.user  # Asignar el usuario autenticado al campo 'owner'
         return super(AddBlog, self).form_valid(form)
 

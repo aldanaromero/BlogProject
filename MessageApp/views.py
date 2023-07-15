@@ -23,7 +23,7 @@ class AddMessage(LoginRequiredMixin, CreateView):
 class Messages(LoginRequiredMixin, ListView):
     context_object_name = 'messages'
     template_name = 'messages.html'
-    login_url = 'accounts/login/'
+    login_url = '/accounts/login/'
 
     def get_queryset(self):
         user = self.request.user

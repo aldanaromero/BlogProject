@@ -1,3 +1,5 @@
+from datetime import date
+
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -6,20 +8,21 @@ from BlogApp.models import Blog, Profile
 
 
 class NewBlog(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['date'].initial = date.today()
+
     class Meta:
         model = Blog
         fields = ['title', 'subtitle', 'body', 'date', 'picture']
-        ##fields = ['title', 'subtitle', 'body', 'owner', 'date', 'picture']
         widgets = {
-            'date': forms.DateInput(format='%d/%m/%Y'),
-            #   'owner': forms.TextInput(attrs={'value': '', 'id': 'owner_id', 'type': 'hidden'}),
-            ## REVISAR
+            'date': forms.DateInput(format='%m/%d/%Y'),
+            'owner': forms.HiddenInput(),
         }
         labels = {
             'title': 'Título',
             'subtitle': 'Subtítulo',
             'body': 'Contenido',
-            #  'owner': 'Autor',
             'date': 'Fecha de creación',
             'picture': 'Imagen',
         }
